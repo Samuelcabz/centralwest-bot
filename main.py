@@ -20,7 +20,7 @@ import requests
 url = "https://relyhome.com/login/"
 apikey = 'ccf7183648c4316217ed45e5a11c78a5'  # 2Captcha API key
 solver = TwoCaptcha(apikey, pollingInterval=1)
-
+ACCOUNT_EMAIL = "FL-CentralWest@FidelisRepairs.com"
 # LOCATORS
 signin_button = "//button[@type='submit']"
 jobs_available_xpath = "//*[@id='sidebar']/div[2]/div[1]/div[2]/div/div/div/div/ul/li[13]/a"
@@ -71,6 +71,7 @@ def send_email_notification_to_me(subject, body):
 def send_job_to_api(system, location, day, time_slot,url,swo):
     try:
         response = requests.post("https://bot101.pythonanywhere.com/api/jobs/store", json={
+            "account": ACCOUNT_EMAIL,
             "system": system,
             "location": location,
             "day": day,
