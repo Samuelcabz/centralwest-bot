@@ -347,7 +347,7 @@ def login_and_click_button():
                             day_number = desired_day.day
                             desired_day_name       = desired_day.strftime('%A')
                             desired_day_with_weekday = f"{desired_day_name} {desired_day.strftime('%B')} {day_number}{add_day_suffix(day_number)}, {desired_day.year}"
-                            desired_day_date_normalized = f"{day_number}{add_day_suffix(day_number)} {desired_day.strftime('%B, %Y')}"
+                            desired_day_date_normalized = f"{day_number}{add_day_suffix(day_number)} {desired_day.strftime('%B, %Y')}" 
                             
                             if button_clicked:
                                 try:
